@@ -1,0 +1,12 @@
+# Ignore the entire pkgs directory (private source code)
+pkgs/
+
+# Optional: Ignore macOS system files
+.DS_Store
+
+# Optional: Ignore node_modules if you ever add frontend tooling
+node_modules/
+
+# Optional: Ignore logs or temp files
+*.log
+tmp/

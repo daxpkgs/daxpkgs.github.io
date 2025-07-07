@@ -1,0 +1,13 @@
+Origin: daxlabs
+Label: daxlabs
+Suite: stable
+Version: 1.0
+Codename: ios6
+Architectures: iphoneos-arm
+Components: main
+Description: Daxlabs Cydia Repository - lightweight Stockfish 6 chess engine for iOS 6
+MD5Sum:
+ aac0c60451221102e607da15266f006f 161006 io.github.daxlabs.stockfish6.deb
+
+SHA256:
+ 4e642f007a80e64f8898a1a709882724565010e65b1a110bf692a969b7dfb90c 161006 io.github.daxlabs.stockfish6.deb

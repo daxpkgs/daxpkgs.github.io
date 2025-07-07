@@ -1,0 +1,210 @@
+:root {
+    --background: #f4f4f4;
+    --foreground: #333;
+    --accent: #007aff;
+    --accent-hover: #0051a8;
+    --header-bg: #222;
+    --header-fg: #fff;
+    --card-bg: #fff;
+    --card-border: #ddd;
+}
+
+[data-theme="dark"] {
+    --background: #121212;
+    --foreground: #e0e0e0;
+    --accent: #0a84ff;
+    --accent-hover: #0060df;
+    --header-bg: #000;
+    --header-fg: #fff;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 17px;
+    line-height: 1.7;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-fg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+header .logo h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--header-fg);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+.hero {
+    background: linear-gradient(to right, #007aff, #0051a8);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-buttons a {
+    display: inline-block;
+    padding: 14px 28px;
+    margin: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--foreground);
+    border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.featured-tweaks, .featured-apps, .why-choose-us {
+    padding: 60px 20px;
+    background-color: var(--background);
+}
+
+.featured-tweaks h3, .featured-apps h3, .why-choose-us h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.tweaks-grid, .apps-grid, .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tweak-card, .app-card, .feature-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tweak-card:hover, .app-card:hover, .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.tweak-image, .app-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-download, .btn-view-all {
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-download:hover, .btn-view-all:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-fg);
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: var(--header-fg);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .tweaks-grid, .apps-grid, .features {
+        flex-direction: column;
+        align-items: center;
+    }
+}

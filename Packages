@@ -1,0 +1,15 @@
+Package: io.github.daxlabs.stockfish6
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: firmware (>= 6.0)
+Filename: ./debs/io.github.daxlabs.stockfish6.deb
+Size: 161006
+MD5sum: aac0c60451221102e607da15266f006f
+SHA1: 9af5eabf4762e0c326ab1e284bff0d274e1e6f60
+SHA256: 4e642f007a80e64f8898a1a709882724565010e65b1a110bf692a969b7dfb90c
+Section: Utilities
+Description: A powerful Stockfish 6 chess engine for local advanced analysis on iOS 6.
+Author: dax <youremail@domain.com>
+Name: Stockfish 6
+Installed-Size: 158

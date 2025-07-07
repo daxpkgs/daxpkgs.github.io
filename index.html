@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>daxoxo repo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>daxoxo repo</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tweaks">Tweaks</a></li>
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Your Go-To Source for the Best iOS Tweaks</h2>
+            <p>Explore a collection of powerful and customizable tweaks for your iPhone. Optimized for iOS 6 and beyond.</p>
+            <div class="cta-buttons">
+                <a href="https://daxoxo.github.io/" class="btn-primary">Add to Cydia</a>
+                <a href="#tweaks" class="btn-secondary">Explore Tweaks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cydia Repository Section -->
+    <section class="cydia-repo">
+      <div class="container">
+          <h3>Get Our Repository on Cydia</h3>
+          <p>Add our Cydia repository to get access to exclusive tweaks and apps!</p>
+          <div class="repo-url-box">
+              <span class="repo-url">https://daxoxo.github.io/</span>
+              <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://daxoxo.github.io/" class="btn-add-repo">
+                  <img src="imgs/cydia-icon.png" alt="Cydia Icon" class="cydia-icon"> Add to Cydia
+              </a>
+          </div>
+      </div>
+    </section>
+
+    <!-- Featured Tweaks Section -->
+    <section id="tweaks" class="featured-tweaks">
+      <div class="container">
+          <h3>Featured Tweaks</h3>
+          <div class="tweaks-grid">
+              <!-- CoverflowFix Tweak Card -->
+              <div class="tweak-card">
+                <img src="imgs/coverflowfix.png" alt="CoverflowFix Tweak" class="tweak-image">
+                <h4>CoverflowFix</h4>
+                <p>Fixes album covers in the music app’s landscape coverflow view and boosts performance on low-end devices.</p>
+                <p>Compatibility: iOS 6+</p>
+                <a href="debs/coverflowfix.deb" class="btn-download">Download</a>
+            </div>
+            <!-- FolderEnhancer Tweak Card -->
+            <div class="tweak-card">
+                <img src="imgs/folderenhancer.png" alt="FolderEnhancer Tweak" class="tweak-image">
+                <h4>FolderEnhancer</h4>
+                <p>Enhances iOS folders with faster opening speeds, larger icon capacity, nested folders, and more.</p>
+                <p>Compatibility: iOS 6+</p>
+                <a href="debs/folderenhancer.deb" class="btn-download">Download</a>
+            </div>
+            <!-- Gravitation Tweak Card -->
+            <div class="tweak-card">
+                <img src="imgs/gravitation.png" alt="Gravitation Tweak" class="tweak-image">
+                <h4>Gravitation</h4>
+                <p>Adds fun gravity effects to your SpringBoard icons, turning it into a mini-game activated via Activator.</p>
+                <p>Compatibility: iOS 6+</p>
+                <a href="debs/gravitation.deb" class="btn-download">Download</a>
+            </div>
+          </div>
+          <a href="#" class="btn-view-all">View All Tweaks</a>
+      </div>
+    </section>
+
+    <!-- Featured Apps Section -->
+    <section class="featured-apps">
+      <div class="container">
+          <h3>Featured Apps</h3>
+          <div class="apps-grid">
+              <!-- Chess App -->
+              <div class="app-card">
+                <img src="imgs/chess.png" alt="Chess App Image" class="app-image">
+                <h4>Chess</h4>
+                <p>A classic chess game designed for iOS 6. Play against the AI or a friend in local multiplayer mode.</p>
+                <p><strong>Compatibility:</strong> iOS 6+</p>
+                <a href="debs/chess.deb" class="btn-download">Download</a>
+            </div>
+            <!-- Chess Clock App -->
+            <div class="app-card">
+                <img src="imgs/chessclock.png" alt="Chess Clock App Image" class="app-image">
+                <h4>Chess Clock</h4>
+                <p>A chess clock app with multiple time control options, delay settings, and a simple, intuitive design.</p>
+                <p><strong>Compatibility:</strong> iOS 6+</p>
+                <a href="debs/chessclock.deb" class="btn-download">Download</a>
+            </div>
+            <!-- Stockfish Chess App -->
+            <div class="app-card">
+                <img src="imgs/stockfish.png" alt="Stockfish Chess App Image" class="app-image">
+                <h4>Stockfish Chess</h4>
+                <p>A powerful chess engine based on Stockfish. Analyze games, play against AI, and review move logs.</p>
+                <p><strong>Compatibility:</strong> iOS 6+</p>
+                <a href="debs/stockfishchess.deb" class="btn-download">Download</a>
+            </div>
+          </div>
+          <a href="#" class="btn-view-all">View All Apps</a>
+      </div>
+    </section>
+
+    <!-- Search Bar Section -->
+    <section class="search-bar">
+        <div class="container">
+            <h3>Looking for a specific tweak?</h3>
+            <form action="#">
+                <input type="text" placeholder="Search tweaks..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h3>Why Choose Our Repository?</h3>
+            <div class="features">
+                <div class="feature-item">
+                    <img src="imgs/performance-icon.png" alt="Performance Icon">
+                    <h4>Optimized for Performance</h4>
+                    <p>Tweaks that are fast and efficient on older iOS versions.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="imgs/updates-icon.png" alt="Updates Icon">
+                    <h4>Regular Updates</h4>
+                    <p>Consistent updates for the latest features and fixes.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="imgs/free-paid-icon.png" alt="Free and Paid Icon">
+                    <h4>Free & Paid Tweaks</h4>
+                    <p>Access both free and premium tweaks in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <h3>Join the Community</h3>
+            <p>Follow us on Twitter, engage with other users, and leave feedback.</p>
+            <div class="social-icons">
+                <a href="https://twitter.com/yourhandle"><img src="imgs/twitter-icon.png" alt="Twitter Icon"></a>
+                <a href="https://paypal.me/yourpaypal"><img src="imgs/paypal-icon.png" alt="PayPal Icon"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 daxoxo repo. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a> | 
+                <a href="#tweaks">Tweaks</a> | 
+                <a href="#support">Support</a> | 
+                <a href="#about">About</a> | 
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

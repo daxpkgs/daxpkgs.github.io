@@ -1,0 +1,134 @@
+Package: io.github.daxlabs.noautocompose
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate
+Filename: ./debs/noautocompose_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Disables auto-compose when opening Messages app.
+Author: dax <youremail@domain.com>
+Name: NoAutoCompose
+
+Package: io.github.daxlabs.notestab
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate
+Filename: ./debs/notestab_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Adds a tab button to Notes for faster indentation and organization.
+Author: dax <youremail@domain.com>
+Name: NotesTab
+
+Package: io.github.daxlabs.musicx
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate
+Filename: ./debs/musicx_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Stream, download, and inject your library directly into the Music app on iOS 6.
+Author: dax <youremail@domain.com>
+Name: MusicX
+
+Package: io.github.daxlabs.trailersx
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate
+Filename: ./debs/trailersx_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Re-experience Apple's Trailers app on iOS 6 with fixed endpoints.
+Author: dax <youremail@domain.com>
+Name: TrailersX
+
+Package: io.github.daxlabs.folderx
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate
+Filename: ./debs/folderx_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Enhances folders on iOS: open faster, add up to 320 icons, nested folders, dock folders, Cylinder and Iconoclasm support, and more.
+Author: dax <youremail@domain.com>
+Name: FolderX
+
+Package: io.github.daxlabs.gravityx
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: mobilesubstrate, preferencebundle, activator
+Filename: ./debs/gravityx_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Tweaks
+Description: Adds a fun, fully adjustable gravity effect to your Home Screen icons, toggled using Activator.
+Author: dax <youremail@domain.com>
+Name: GravityX
+
+Package: io.github.daxlabs.chess
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: firmware (>= 6.0)
+Filename: ./debs/chess_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Games
+Description: A 3D battle chess game with animated pieces and classic strategy on iOS.
+Author: dax <youremail@domain.com>
+Name: Chess
+
+Package: io.github.daxlabs.stockfish
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: firmware (>= 6.0)
+Filename: ./debs/stockfish_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Utilities
+Description: A powerful Stockfish chess engine client optimized for iOS 6 devices.
+Author: dax <youremail@domain.com>
+Name: Stockfish
+
+Package: io.github.daxlabs.chessclock
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: daxlabs <youremail@domain.com>
+Depends: firmware (>= 6.0)
+Filename: ./debs/chessclock_1.0.deb
+Size: [size_in_bytes]
+MD5sum: [md5_of_deb]
+SHA1: [sha1_of_deb]
+SHA256: [sha256_of_deb]
+Section: Utilities
+Description: A simple, customizable chess timer app to keep track of your game clocks.
+Author: dax <youremail@domain.com>
+Name: Chess Clock
