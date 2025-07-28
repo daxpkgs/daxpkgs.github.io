@@ -1,4 +1,4 @@
 # APT Source
 
-## daxlabs repo
-### https://daxlabs.github.io/
+## daxpkgs repo
+### https://daxpkgs.github.io/

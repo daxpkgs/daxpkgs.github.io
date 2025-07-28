@@ -1,184 +1,450 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>daxoxo repo</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <title>daxpkgs repo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-start: #1a1a1a;
+        --bg-mid: #151515;
+        --bg-end: #121212;
+        --header-bg: #0a0a0a;
+        --text-color: #f0f0f0;
+        --link-color: #9fcfff;
+        --header-border: #222;
+        --card-bg: #1e1e1e;
+        --shadow-color: rgba(0, 0, 0, 0.4);
+        --button-gradient-start: #4da6ff;
+        --button-gradient-end: #007aff;
+        --button-shadow: #005bb5;
+        --button-border: #0066cc;
+        --footer-color: #777;
+        --transition-speed: 0.25s ease-in-out;
+        --secondary-text-color: #c0c0c0;
+        --description-text-color: #e0e0e0;
+        --hr-color: #383838;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(
+          to bottom,
+          var(--bg-start),
+          var(--bg-mid),
+          var(--bg-end)
+        );
+        color: var(--text-color);
+        font-family: "Inter", sans-serif;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 12px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      header {
+        background: var(--header-bg);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid var(--header-border);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+        border-radius: 0 0 10px 10px;
+        transform: translateZ(0);
+        backdrop-filter: blur(5px);
+        background-color: rgba(10, 10, 10, 0.8);
+      }
+      header h1 {
+        color: var(--link-color);
+        font-size: 20px;
+        margin: 0;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 8px rgba(159, 207, 255, 0.4);
+      }
+      .nav-links a {
+        color: var(--secondary-text-color);
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 15px;
+        transition:
+          color var(--transition-speed),
+          text-shadow var(--transition-speed);
+        position: relative;
+        padding-bottom: 5px;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0px;
+        left: 0;
+        background-color: var(--link-color);
+        transition: width var(--transition-speed);
+      }
+      .nav-links a:hover {
+        color: var(--link-color);
+        text-shadow: 0 0 5px rgba(159, 207, 255, 0.3);
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* New styling for the repo link and Cydia button container */
+      .repo-cta-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 18px 20px; /* Reduced vertical padding significantly */
+        background: #181818;
+        border-radius: 12px;
+        margin-top: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        border: 1px solid #2a2a2a;
+      }
+
+      .repo-link {
+        color: var(--link-color);
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          color var(--transition-speed),
+          text-shadow var(--transition-speed);
+        white-space: nowrap;
+      }
+      .repo-link:hover {
+        color: #c0dfff;
+        text-shadow: 0 0 8px rgba(159, 207, 255, 0.5);
+      }
+
+      h2,
+      h4 {
+        color: var(--link-color);
+        text-align: center;
+        margin: 30px 0 15px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-shadow: 0 0 6px rgba(159, 207, 255, 0.3);
+      }
+      h2 {
+        font-size: 28px;
+        padding-top: 10px;
+      }
+      h4 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 15px;
+        text-align: center;
+        margin: 8px 15px;
+        line-height: 1.5;
+        color: var(--secondary-text-color);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background: linear-gradient(
+          to bottom,
+          var(--button-gradient-start),
+          var(--button-gradient-end)
+        );
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        box-shadow: 0 3px var(--button-shadow);
+        border: 1px solid var(--button-border);
+        transition: all var(--transition-speed);
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: linear-gradient(to bottom, #7bbdff, #3aa0ff);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 91, 181, 0.4);
+      }
+      .btn:active {
+        box-shadow: 0 1px var(--button-shadow);
+        transform: translateY(2px);
+      }
+      .card-btn {
+        padding: 8px 18px;
+        font-size: 14px;
+        margin: 15px auto 5px auto;
+        border-radius: 6px;
+        box-shadow: 0 2px var(--button-shadow);
+      }
+      .card-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 91, 181, 0.4);
+      }
+      .card-btn:active {
+        box-shadow: 0 1px var(--button-shadow);
+        transform: translateY(2px);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 25px 0;
+      }
+      .card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        transition:
+          transform var(--transition-speed),
+          box-shadow var(--transition-speed);
+        overflow: hidden;
+        border: 1px solid #282828;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+      }
+      img.app-image {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 18px;
+        margin: 10px 0 18px;
+        border: 3px solid #3d3d3d;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition:
+          transform var(--transition-speed),
+          box-shadow var(--transition-speed);
+      }
+      .card:hover img.app-image {
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      }
+      .card p {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      footer {
+        text-align: center;
+        font-size: 13px;
+        color: var(--footer-color);
+        margin-top: 50px;
+        padding-bottom: 25px;
+        border-top: 1px solid #282828;
+        padding-top: 25px;
+      }
+      footer a {
+        color: var(--link-color);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color var(--transition-speed);
+      }
+      footer a:hover {
+        color: #c0dfff;
+        text-shadow: 0 0 5px rgba(159, 207, 255, 0.2);
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--hr-color);
+        margin: 50px 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Media Queries */
+      @media (max-width: 480px) {
+        .repo-cta-container {
+          flex-direction: column;
+          gap: 10px;
+          padding: 15px; /* Also reduced padding here */
+        }
+        .repo-link {
+          font-size: 16px;
+        }
+        .btn {
+          font-size: 13px;
+          padding: 8px 15px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        img.app-image {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>daxoxo repo</h1>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#tweaks">Tweaks</a></li>
-                    <li><a href="#support">Support</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <h1 onclick="location.href='index.html'">daxpkgs</h1>
+      <nav class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#games">Games</a>
+        <a href="#utilities">Utilities</a>
+        <a href="#projects">Projects</a>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Your Go-To Source for the Best iOS Tweaks</h2>
-            <p>Explore a collection of powerful and customizable tweaks for your iPhone. Optimized for iOS 6 and beyond.</p>
-            <div class="cta-buttons">
-                <a href="https://daxoxo.github.io/" class="btn-primary">Add to Cydia</a>
-                <a href="#tweaks" class="btn-secondary">Explore Tweaks</a>
-            </div>
-        </div>
-    </section>
+    <div class="repo-cta-container">
+      <a href="https://daxpkgs.github.io/" class="repo-link">
+        http://daxpkgs.github.io/
+      </a>
+      <a
+        href="cydia://url/https://cydia.saurik.com/api/share#?source=https://daxpkgs.github.io/"
+        class="btn"
+        >Add to Cydia</a
+      >
+    </div>
 
-    <!-- Cydia Repository Section -->
-    <section class="cydia-repo">
-      <div class="container">
-          <h3>Get Our Repository on Cydia</h3>
-          <p>Add our Cydia repository to get access to exclusive tweaks and apps!</p>
-          <div class="repo-url-box">
-              <span class="repo-url">https://daxoxo.github.io/</span>
-              <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://daxoxo.github.io/" class="btn-add-repo">
-                  <img src="imgs/cydia-icon.png" alt="Cydia Icon" class="cydia-icon"> Add to Cydia
-              </a>
-          </div>
+    <hr />
+
+    <h2 id="apps">Apps</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="imgs/plex.png" alt="Plex Icon" class="app-image" />
+        <h4>Plex for Legacy iOS</h4>
+        <p>
+          Stream or download your Plex library on iOS 6 devices with a clean,
+          fast interface.
+        </p>
+        <a href="depictions/plex.html" class="btn card-btn">More Info</a>
       </div>
-    </section>
-
-    <!-- Featured Tweaks Section -->
-    <section id="tweaks" class="featured-tweaks">
-      <div class="container">
-          <h3>Featured Tweaks</h3>
-          <div class="tweaks-grid">
-              <!-- CoverflowFix Tweak Card -->
-              <div class="tweak-card">
-                <img src="imgs/coverflowfix.png" alt="CoverflowFix Tweak" class="tweak-image">
-                <h4>CoverflowFix</h4>
-                <p>Fixes album covers in the music app’s landscape coverflow view and boosts performance on low-end devices.</p>
-                <p>Compatibility: iOS 6+</p>
-                <a href="debs/coverflowfix.deb" class="btn-download">Download</a>
-            </div>
-            <!-- FolderEnhancer Tweak Card -->
-            <div class="tweak-card">
-                <img src="imgs/folderenhancer.png" alt="FolderEnhancer Tweak" class="tweak-image">
-                <h4>FolderEnhancer</h4>
-                <p>Enhances iOS folders with faster opening speeds, larger icon capacity, nested folders, and more.</p>
-                <p>Compatibility: iOS 6+</p>
-                <a href="debs/folderenhancer.deb" class="btn-download">Download</a>
-            </div>
-            <!-- Gravitation Tweak Card -->
-            <div class="tweak-card">
-                <img src="imgs/gravitation.png" alt="Gravitation Tweak" class="tweak-image">
-                <h4>Gravitation</h4>
-                <p>Adds fun gravity effects to your SpringBoard icons, turning it into a mini-game activated via Activator.</p>
-                <p>Compatibility: iOS 6+</p>
-                <a href="debs/gravitation.deb" class="btn-download">Download</a>
-            </div>
-          </div>
-          <a href="#" class="btn-view-all">View All Tweaks</a>
+      <div class="card">
+        <img
+          src="imgs/youtubemusic.png"
+          alt="YouTube Music Icon"
+          class="app-image"
+        />
+        <h4>YouTube Music for Legacy iOS</h4>
+        <p>
+          Stream your favorite music with background playback, styled with
+          YouTube Red.
+        </p>
+        <a href="depictions/youtubemusic.html" class="btn card-btn"
+          >More Info</a
+        >
       </div>
-    </section>
+    </div>
 
-    <!-- Featured Apps Section -->
-    <section class="featured-apps">
-      <div class="container">
-          <h3>Featured Apps</h3>
-          <div class="apps-grid">
-              <!-- Chess App -->
-              <div class="app-card">
-                <img src="imgs/chess.png" alt="Chess App Image" class="app-image">
-                <h4>Chess</h4>
-                <p>A classic chess game designed for iOS 6. Play against the AI or a friend in local multiplayer mode.</p>
-                <p><strong>Compatibility:</strong> iOS 6+</p>
-                <a href="debs/chess.deb" class="btn-download">Download</a>
-            </div>
-            <!-- Chess Clock App -->
-            <div class="app-card">
-                <img src="imgs/chessclock.png" alt="Chess Clock App Image" class="app-image">
-                <h4>Chess Clock</h4>
-                <p>A chess clock app with multiple time control options, delay settings, and a simple, intuitive design.</p>
-                <p><strong>Compatibility:</strong> iOS 6+</p>
-                <a href="debs/chessclock.deb" class="btn-download">Download</a>
-            </div>
-            <!-- Stockfish Chess App -->
-            <div class="app-card">
-                <img src="imgs/stockfish.png" alt="Stockfish Chess App Image" class="app-image">
-                <h4>Stockfish Chess</h4>
-                <p>A powerful chess engine based on Stockfish. Analyze games, play against AI, and review move logs.</p>
-                <p><strong>Compatibility:</strong> iOS 6+</p>
-                <a href="debs/stockfishchess.deb" class="btn-download">Download</a>
-            </div>
-          </div>
-          <a href="#" class="btn-view-all">View All Apps</a>
+    <hr />
+
+    <h2 id="games">Games</h2>
+    <div class="grid-container">
+      <!--
+      <div class="card">
+        <img
+          src="imgs/clashclassic.png"
+          alt="Clash of Clans Icon"
+          class="app-image"
+        />
+        <h4>Clash Classic</h4>
+        <p>
+          Classic Clash of Clans for offline sandbox or private server testing.
+        </p>
+        <a href="depictions/clashclassic.html" class="btn card-btn"
+          >More Info</a
+        >
       </div>
-    </section>
+      <div class="card">
+        <img
+          src="imgs/retroroyale.png"
+          alt="Clash Royale Icon"
+          class="app-image"
+        />
+        <h4>Retro Royale</h4>
+        <p>
+          Classic Clash Royale 1.8.2 remake for testing and offline sandbox.
+        </p>
+        <a href="depictions/retroroyale.html" class="btn card-btn">More Info</a>
+      </div>
+      -->
+      <div class="card">
+        <img src="imgs/chess.png" alt="Chess App" class="app-image" />
+        <h4>Chess</h4>
+        <p>
+          Classic offline chess with local multiplayer, designed for iOS 6 and
+          up.
+        </p>
+        <a href="depictions/chess.html" class="btn card-btn">More Info</a>
+      </div>
+      <div class="card">
+        <img src="imgs/stockfish.png" alt="Stockfish" class="app-image" />
+        <h4>Stockfish Chess</h4>
+        <p>Analyze games and play against Stockfish engine on your device.</p>
+        <a href="depictions/stockfish.html" class="btn card-btn">More Info</a>
+      </div>
+    </div>
 
-    <!-- Search Bar Section -->
-    <section class="search-bar">
-        <div class="container">
-            <h3>Looking for a specific tweak?</h3>
-            <form action="#">
-                <input type="text" placeholder="Search tweaks..." name="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    </section>
+    <hr />
 
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h3>Why Choose Our Repository?</h3>
-            <div class="features">
-                <div class="feature-item">
-                    <img src="imgs/performance-icon.png" alt="Performance Icon">
-                    <h4>Optimized for Performance</h4>
-                    <p>Tweaks that are fast and efficient on older iOS versions.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="imgs/updates-icon.png" alt="Updates Icon">
-                    <h4>Regular Updates</h4>
-                    <p>Consistent updates for the latest features and fixes.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="imgs/free-paid-icon.png" alt="Free and Paid Icon">
-                    <h4>Free & Paid Tweaks</h4>
-                    <p>Access both free and premium tweaks in one place.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h2 id="utilities">Utilities</h2>
+    <div class="grid-container">
+      <div class="card">
+        <img src="imgs/chessclock.png" alt="Chess Clock" class="app-image" />
+        <h4>Chess Clock</h4>
+        <p>
+          Simple, clean chess clock with multiple time controls for local
+          matches.
+        </p>
+        <a href="depictions/chessclock.html" class="btn card-btn">More Info</a>
+      </div>
+    </div>
 
-    <!-- Community Section -->
-    <section class="community">
-        <div class="container">
-            <h3>Join the Community</h3>
-            <p>Follow us on Twitter, engage with other users, and leave feedback.</p>
-            <div class="social-icons">
-                <a href="https://twitter.com/yourhandle"><img src="imgs/twitter-icon.png" alt="Twitter Icon"></a>
-                <a href="https://paypal.me/yourpaypal"><img src="imgs/paypal-icon.png" alt="PayPal Icon"></a>
-            </div>
-        </div>
-    </section>
+    <hr />
 
-    <!-- Footer -->
+    <h2 id="projects">Projects</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h4>Coming Soon</h4>
+        <p>Open-source projects and experiments will appear here.</p>
+      </div>
+    </div>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 daxoxo repo. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#home">Home</a> | 
-                <a href="#tweaks">Tweaks</a> | 
-                <a href="#support">Support</a> | 
-                <a href="#about">About</a> | 
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
+      © 2025 dax ·
+      <!--
+      <a href="https://twitter.com/yourhandle">Twitter</a> ·
+      <a href="https://paypal.me/yourname">PayPal</a> ·
+      -->
+      <a href="https://discord.gg/VPhmX6586A">Discord</a>
     </footer>
-</body>
+  </body>
 </html>
