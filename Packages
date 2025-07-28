@@ -59,14 +59,14 @@ Author: dax
 Name: Stockfish 6
 
 Package: io.github.daxpkgs.youtubemusic
-Version: 0.0.1-248+debug
+Version: 0.0.1-249+debug
 Architecture: iphoneos-arm
 Maintainer: dax <daxoxo@icloud.com>
-Filename: debs/io.github.daxpkgs.youtubemusic_0.0.1.deb
-Size: 267648
-MD5sum: 055f7ddb9781ea02b4d92702ae516843
-SHA1: 0d81e4456bdd144076d6791f0199777b142a0a13
-SHA256: 8ccfce8eaa5c30d67dab1662d948b6b74ad64d8b4808bdff9f1369363501bc58
+Filename: debs/io.github.daxpkgs.youtubemusic_0.0.1-249+debug_iphoneos-arm.deb
+Size: 268070
+MD5sum: 98e2f8ef47d7368c36206c1d5184026a
+SHA1: ce3fd5b05f43eddfb4b398e4e1ffabdd525f504e
+SHA256: fc9e574eff23312c127c9df5c4d0087dfbd2e48a3924d9753d5abe94e39501ce
 Section: Utilities
 Description: An awesome application!
 Author: dax <daxoxo@icloud.com>
