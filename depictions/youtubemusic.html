@@ -18,28 +18,23 @@
         --bg-end: #121212;
         --card-bg: #1e1e1e;
         --text-color: #f0f0f0;
-        --heading-color: #fe0032;
-        --link-color: #fe0032;
+        --heading-color: #B01E14; /* Updated YouTube Red */
+        --link-color: #B01E14; /* Updated YouTube Red */
         --secondary-text-color: #c0c0c0;
         --shadow-color: rgba(0, 0, 0, 0.5);
         --border-color: #282828;
         --transition-speed: 0.25s ease-in-out;
 
         /* Primary button (Install) */
-        --primary-button-bg-start: #fe0032; /* New YouTube Red */
-        --primary-button-bg-end: #cc0028; /* Darker New YouTube Red */
-        --primary-button-shadow: #99001f;
-        --primary-button-border: #bb002e;
+        --primary-button-bg-start: #B01E14; /* YouTube Red */
+        --primary-button-bg-end: #8f1a11; /* Darker YouTube Red */
+        --primary-button-shadow: #6b140e;
+        --primary-button-border: #931b12;
 
         /* Secondary button (Download .deb) */
-        --secondary-button-color: #fe0032;
-        --secondary-button-border: #fe0032;
-        --secondary-button-hover-bg: rgba(
-          254,
-          0,
-          50,
-          0.1
-        ); /* Transparent New YouTube Red */
+        --secondary-button-color: #B01E14;
+        --secondary-button-border: #B01E14;
+        --secondary-button-hover-bg: rgba(176, 30, 20, 0.1); /* Transparent YouTube Red */
       }
 
       body {
@@ -77,13 +72,15 @@
         border: 3px solid #3d3d3d; /* Consistent border */
       }
 
-      h1 {
+      h1, h2 {
         color: var(--heading-color);
+        text-shadow: 0 0 8px rgba(176, 30, 20, 0.4); /* YouTube Red glow */
+      }
+      h1 {
         font-size: 24px; /* Larger title */
         margin: 0;
         font-weight: 700;
         letter-spacing: 0.5px;
-        text-shadow: 0 0 8px rgba(254, 0, 50, 0.4); /* New YouTube Red glow */
       }
 
       .tagline {
@@ -127,11 +124,11 @@
       .button-primary:hover {
         background: linear-gradient(
           to bottom,
-          #ff3366,
-          #e5002b
-        ); /* Slightly brighter red on hover */
+          #c5271f,
+          #a21f17
+        ); /* Slightly brighter YouTube Red on hover */
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(153, 0, 31, 0.4); /* New YouTube Red shadow on hover */
+        box-shadow: 0 6px 12px rgba(107, 20, 14, 0.4); /* YouTube Red shadow on hover */
       }
       .button-primary:active {
         box-shadow: 0 1px var(--primary-button-shadow);
@@ -146,8 +143,8 @@
       }
       .button-secondary:hover {
         background: var(--secondary-button-hover-bg);
-        color: #ff3366; /* Lighter red on hover */
-        border-color: #ff3366;
+        color: #c5271f; /* Lighter YouTube Red on hover */
+        border-color: #c5271f;
         transform: translateY(-1px);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
       }
@@ -166,7 +163,6 @@
       }
 
       h2 {
-        color: var(--heading-color);
         font-size: 18px; /* Consistent section heading size */
         border-bottom: 1px solid #333;
         padding-bottom: 5px; /* More padding under heading border */
@@ -174,7 +170,6 @@
         margin-bottom: 15px; /* Space after heading */
         font-weight: 600;
         letter-spacing: 0.5px;
-        text-shadow: 0 0 5px rgba(254, 0, 50, 0.2); /* New YouTube Red glow */
       }
 
       p {
@@ -227,7 +222,7 @@
         transition: color var(--transition-speed);
       }
       a:hover {
-        color: #ff3366; /* Lighter red on hover */
+        color: #c5271f; /* Lighter YouTube Red on hover */
       }
 
       footer {
@@ -246,8 +241,8 @@
         transition: color var(--transition-speed);
       }
       footer a:hover {
-        color: #ff3366; /* Lighter red on hover */
-        text-shadow: 0 0 5px rgba(254, 0, 50, 0.2); /* New YouTube Red glow */
+        color: #c5271f;
+        text-shadow: 0 0 5px rgba(176, 30, 20, 0.2); /* YouTube Red glow */
       }
 
       /* Media Queries for Larger Screens */
