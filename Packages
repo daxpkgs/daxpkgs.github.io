@@ -1,49 +1,3 @@
-Package: com.daxsgames.chess
-Version: 1.0-4+debug
-Architecture: iphoneos-arm
-Maintainer: dax <youremail@example.com>
-Installed-Size: 10812
-Filename: debs/io.github.daxpkgs.chess.deb
-Size: 9294756
-MD5sum: e19d50edb3c307b8cce0f654ddb314a1
-SHA1: f0a5f1f5d0502e3fdccf447da8db2a9175c96bcf
-SHA256: dac99d608311b34f3b55a4483f6c4c8a40d8fe0cdea443592c0343ef4185aeb7
-Section: Applications
-Description: A skeuomorphic chess app designed for iOS 6
-Author: dax <youremail@example.com>
-Name: Chess
-
-Package: com.daxsgames.stockfish
-Version: 0.0.1-1+debug
-Architecture: iphoneos-arm
-Maintainer: dax
-Installed-Size: 444
-Filename: debs/io.github.daxpkgs.stockfish.deb
-Size: 339502
-MD5sum: 3881c3b2e8441eb1891a616b56b50b1a
-SHA1: cfce552d685d336f581b53e61e8ceba425d043da
-SHA256: 12424ba068d44f8d36cf3b50271af06dbe19dbb9ea762ed64249e39f83b28e65
-Section: Utilities
-Description: An awesome application!
-Author: dax
-Name: Stockfish
-
-Package: com.yourcompany.chessclock
-Version: 0.0.1-240+debug
-Architecture: iphoneos-arm
-Maintainer: dax <daxoxo@icloud.com>
-Installed-Size: 1084
-Depends: firmware (<< 7.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.0)
-Filename: debs/io.github.daxpkgs.chessclock.deb
-Size: 569824
-MD5sum: a0134dbfeee70d1cd8b3ff6d99dbf48f
-SHA1: 4a869f006e20b03d77d28e50a2717d846f120e32
-SHA256: 2c97508ac24be4294533db808c3334ba49763e18889cb2d59b34963df16bf62a
-Section: Utilities
-Description: A skeuomorphic chess clock application designed for iOS 6!
-Author: dax <daxoxo@icloud.com>
-Name: Chess Clock
-
 Package: io.github.daxlabs.stockfish6
 Version: 1.0.0
 Architecture: iphoneos-arm
@@ -57,6 +11,20 @@ Section: Utilities
 Description: Stockfish 6 binary precompiled for iOS 6
 Author: dax
 Name: Stockfish 6
+
+Package: io.github.daxpkgs.watchparty
+Version: 0.0.1-58+debug
+Architecture: iphoneos-arm
+Maintainer: dax <daxoxo@icloud.com>
+Filename: debs/io.github.daxpkgs.watchparty_0.0.1-58+debug_iphoneos-arm.deb
+Size: 1762600
+MD5sum: fc15f3789ddd74816ef81b933141931b
+SHA1: 000159f8f3bf6e21c2854b4558234daadb58ee5e
+SHA256: dc7e130ec24157d5947954469fbe7445c700a6dc447e2f383b042bcdc4381ade
+Section: Utilities
+Description: An awesome application!
+Author: dax <daxoxo@icloud.com>
+Name: Watch Party
 
 Package: io.github.daxpkgs.youtubemusic
 Version: 0.0.1-258+debug
