@@ -7,6 +7,8 @@ Architectures: iphoneos-arm
 Components: main
 Description: DaxPKGs Repo
 
+MDIcon: icon.png
+
 MD5Sum:
  aac0c60451221102e607da15266f006f 161006 io.github.daxpkgs.stockfish6.deb
  d1e74e9f391100f93372e3034dc93d20 459398 io.github.daxpkgs.youtubemusic_0.0.1-258+debug_iphoneos-arm.deb
