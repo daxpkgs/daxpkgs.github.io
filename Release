@@ -7,7 +7,7 @@ Architectures: iphoneos-arm
 Components: main
 Description: DaxPKGs Repo
 
-MDIcon: icon.png
+MDIcon: CydiaIcon.png
 
 MD5Sum:
  aac0c60451221102e607da15266f006f 161006 io.github.daxpkgs.stockfish6.deb
