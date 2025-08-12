@@ -1,403 +1,706 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
-    <title>daxpkgs repo</title>
-    <style>
-      :root {
-        --bg-start: #1a1a1a;
-        --bg-mid: #151515;
-        --bg-end: #121212;
-        --header-bg: #0a0a0a;
-        --text-color: #f0f0f0;
-        --link-color: #9fcfff;
-        --header-border: #222;
-        --card-bg: #1e1e1e;
-        --shadow-color: rgba(0, 0, 0, 0.4);
-        --button-gradient-start: #4da6ff;
-        --button-gradient-end: #007aff;
-        --button-shadow: #005bb5;
-        --button-border: #0066cc;
-        --footer-color: #777;
-        --transition-speed: 0.25s ease-in-out;
-        --secondary-text-color: #c0c0c0;
-        --description-text-color: #e0e0e0;
-        --hr-color: #383838;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>daxpkgs repo</title>
+  <style>
+    :root {
+      --bg-start: #0a0a0a;
+      --bg-mid: #151515;
+      --bg-end: #1a1a1a;
+      --header-bg: rgba(8, 8, 8, 0.95);
+      --text-color: #f5f5f5;
+      --link-color: #64b5ff;
+      --link-hover: #8cc8ff;
+      --header-border: #333;
+      --card-bg: #1c1c1c;
+      --card-border: #2a2a2a;
+      --card-hover-bg: #222;
+      --shadow-light: rgba(0, 0, 0, 0.3);
+      --shadow-medium: rgba(0, 0, 0, 0.5);
+      --button-gradient-start: #3d8bfd;
+      --button-gradient-end: #0056d3;
+      --button-hover-start: #5ba0ff;
+      --button-hover-end: #2d7aff;
+      --accent-blue: #4a9eff;
+      --secondary-text: #b8b8b8;
+      --description-text: #d8d8d8;
+      --hr-color: #404040;
+      --success-green: #28a745;
+      --warning-orange: #fd7e14;
+    }
+
+    body {
+      background: -webkit-gradient(linear, left top, left bottom, from(#0a0a0a), color-stop(0.5, #151515), to(#1a1a1a));
+      background: linear-gradient(to bottom, #0a0a0a, #151515, #1a1a1a);
+      color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Enhanced header with subtle glass effect */
+    header {
+      background: rgba(12, 12, 12, 0.92);
+      padding: 16px 24px;
+      border-bottom: 2px solid #333;
+      border-radius: 0 0 16px 16px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle animated background pattern */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-gradient(linear, left top, right bottom,
+          color-stop(0%, transparent),
+          color-stop(25%, rgba(100, 181, 255, 0.02)),
+          color-stop(50%, transparent),
+          color-stop(75%, rgba(100, 181, 255, 0.02)),
+          to(transparent));
+      background: linear-gradient(135deg, transparent 0%, rgba(100, 181, 255, 0.02) 25%, transparent 50%, rgba(100, 181, 255, 0.02) 75%, transparent 100%);
+      background-size: 200% 200%;
+      -webkit-animation: shimmer 8s ease-in-out infinite;
+      animation: shimmer 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @-webkit-keyframes shimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
       }
 
-      /* Removed scroll-behavior */
+      50% {
+        background-position: 100% 50%;
+      }
+    }
 
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .logo-title {
+      display: inline-block;
+      float: left;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .repo-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin-right: 15px;
+      vertical-align: middle;
+      border: 2px solid rgba(100, 181, 255, 0.3);
+      display: inline-block;
+    }
+
+    .repo-logo:hover {
+      border-color: rgba(100, 181, 255, 0.6);
+    }
+
+    header h1 {
+      color: #64b5ff;
+      font-size: 26px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 40px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .nav-links {
+      float: right;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-links a {
+      color: #b8b8b8;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      padding: 8px 12px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      color: #8cc8ff;
+      background: rgba(100, 181, 255, 0.08);
+    }
+
+    /* clearfix for header */
+    header::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* Enhanced repo container with more sophistication */
+    .repo-cta-container {
+      text-align: center;
+      padding: 35px 40px;
+      background: -webkit-gradient(linear, left top, left bottom, from(#1d1d1d), color-stop(0.5, #191919), to(#171717));
+      background: linear-gradient(to bottom, #1d1d1d, #191919 50%, #171717);
+      border-radius: 20px;
+      margin: 40px 0;
+      border: 1px solid #2d2d2d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .repo-cta-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(15%, #4a9eff), color-stop(85%, #4a9eff), to(transparent));
+      background: linear-gradient(90deg, transparent, #4a9eff 15%, #4a9eff 85%, transparent);
+    }
+
+    .repo-cta-container::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 181, 255, 0.05)), to(transparent));
+      background: linear-gradient(to bottom, rgba(100, 181, 255, 0.05), transparent);
+      pointer-events: none;
+    }
+
+    .repo-link {
+      color: #64b5ff;
+      font-size: 22px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      white-space: nowrap;
+      display: block;
+      margin-bottom: 22px;
+      padding: 16px 24px;
+      background: rgba(100, 181, 255, 0.06);
+      border-radius: 16px;
+      border: 1px solid rgba(100, 181, 255, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .repo-link:hover {
+      color: #8cc8ff;
+      background: rgba(100, 181, 255, 0.1);
+      border-color: rgba(100, 181, 255, 0.4);
+    }
+
+    /* Enhanced button styling */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 12px;
+      background: -webkit-gradient(linear, left top, left bottom, from(#3d8bfd), to(#0056d3));
+      background: linear-gradient(to bottom, #3d8bfd, #0056d3);
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1px solid #0056d3;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, rgba(255, 255, 255, 0.1)), to(transparent));
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 50%, transparent);
+    }
+
+    .btn:hover {
+      background: -webkit-gradient(linear, left top, left bottom, from(#5ba0ff), to(#2d7aff));
+      background: linear-gradient(to bottom, #5ba0ff, #2d7aff);
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .card-btn {
+      padding: 12px 22px;
+      font-size: 14px;
+      margin: 20px auto 8px auto;
+      border-radius: 10px;
+    }
+
+    /* Enhanced typography */
+    h2,
+    h4 {
+      color: #64b5ff;
+      text-align: center;
+      margin: 45px 0 25px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 32px;
+      padding-top: 15px;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #4a9eff), to(transparent));
+      background: linear-gradient(90deg, transparent, #4a9eff 50%, transparent);
+      border-radius: 2px;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      margin: 12px 20px;
+      line-height: 1.6;
+      color: #b8b8b8;
+    }
+
+    /* Enhanced card design with subtle depth */
+    .card {
+      background: -webkit-gradient(linear, left top, left bottom, from(#1f1f1f), to(#1a1a1a));
+      background: linear-gradient(to bottom, #1f1f1f, #1a1a1a);
+      border-radius: 24px;
+      padding: 35px 30px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      width: 260px;
+      margin: 0 16px 35px 16px;
+      border: 1px solid #2d2d2d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle card glow effect with enhanced depth */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: -webkit-gradient(radial, center top, 0, center center, 300%, from(rgba(100, 181, 255, 0.04)), color-stop(0.3, rgba(100, 181, 255, 0.02)), to(transparent));
+      background: radial-gradient(ellipse at top, rgba(100, 181, 255, 0.04), rgba(100, 181, 255, 0.02) 30%, transparent);
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(30%, rgba(100, 181, 255, 0.3)), color-stop(70%, rgba(100, 181, 255, 0.3)), to(transparent));
+      background: linear-gradient(90deg, transparent, rgba(100, 181, 255, 0.3) 30%, rgba(100, 181, 255, 0.3) 70%, transparent);
+    }
+
+    .card:hover {
+      background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#202020));
+      background: linear-gradient(to bottom, #252525, #202020);
+      border-color: #3a3a3a;
+    }
+
+    /* Enhanced grid and cards */
+    .grid-container {
+      text-align: center;
+      margin: 40px 0;
+      padding: 0 10px;
+    }
+
+    /* Enhanced app images with subtle glow */
+    img.app-image {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 26px;
+      margin: 20px 0 25px;
+      border: 3px solid #404040;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card:hover img.app-image {
+      border-color: #505050;
+    }
+
+    .card p {
+      min-height: 70px;
+      display: block;
+      margin-bottom: 30px;
+      color: #d8d8d8;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* Enhanced footer */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-top: 60px;
+      padding: 30px 0;
+      border-top: 1px solid #333;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #4a9eff), to(transparent));
+      background: linear-gradient(90deg, transparent, #4a9eff 50%, transparent);
+    }
+
+    footer a {
+      color: #64b5ff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #8cc8ff;
+    }
+
+    /* Enhanced dividers */
+    hr {
+      border: none;
+      height: 1px;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #404040), to(transparent));
+      background: linear-gradient(90deg, transparent, #404040 50%, transparent);
+      margin: 60px 0;
+      position: relative;
+    }
+
+    hr::after {
+      content: "⬥";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      color: #4a9eff;
+      background: #151515;
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
+    /* Mobile responsiveness for legacy devices */
+    @media screen and (max-width: 480px) {
       body {
-        background: linear-gradient(
-          to bottom,
-          #1a1a1a,
-          #151515,
-          #121212
-        );
-        color: #f0f0f0;
-        font-family: Helvetica, Arial, sans-serif;
-        max-width: 1024px;
-        margin: 0 auto;
-        padding: 12px;
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        padding: 10px;
+        font-size: 14px;
       }
 
       header {
-        background: #0a0a0a;
-        /* replaced flex with block and float */
-        padding: 10px 16px;
-        position: static;
-        border-bottom: 1px solid #222;
-        /* simplified box-shadow */
-        box-shadow: none;
-        border-radius: 0 0 10px 10px;
-        /* removed transform and backdrop-filter */
-        background-color: rgba(10, 10, 10, 0.8);
-        zoom: 1;
+        padding: 12px 16px;
       }
-      header h1 {
-        color: #9fcfff;
-        font-size: 20px;
-        margin: 0;
-        cursor: pointer;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        /* removed text-shadow */
-        display: inline-block;
-        float: left;
-        line-height: 32px;
-      }
-      .nav-links {
-        float: right;
-        margin-top: 6px;
-      }
-      .nav-links a {
-        color: #c0c0c0;
-        text-decoration: none;
-        margin-left: 20px;
-        font-size: 15px;
-        /* removed transition */
-        position: relative;
-        padding-bottom: 5px;
-        display: inline-block;
-      }
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0px;
-        left: 0;
-        background-color: #9fcfff;
-        /* removed transition */
-      }
-      .nav-links a:hover {
-        color: #9fcfff;
-        /* removed text-shadow */
-      }
-      .nav-links a:hover::after {
-        width: 100%;
-      }
-      /* clearfix for header */
-      header::after {
-        content: "";
+
+      .logo-title {
+        float: none;
         display: block;
-        clear: both;
-      }
-
-      /* New styling for the repo link and Cydia button container */
-      .repo-cta-container {
-        /* replaced flex with block and inline-block */
         text-align: center;
-        padding: 18px 20px;
-        background: #181818;
-        border-radius: 12px;
-        margin-top: 30px;
-        /* simplified box-shadow */
-        box-shadow: none;
-        border: 1px solid #2a2a2a;
+        margin-bottom: 15px;
       }
 
-      .repo-link {
-        color: #9fcfff;
-        font-size: 18px;
-        text-decoration: none;
-        font-weight: 600;
-        /* removed transition */
-        white-space: nowrap;
-        display: inline-block;
-        margin-right: 15px;
-        vertical-align: middle;
-      }
-      .repo-link:hover {
-        color: #c0dfff;
-        /* removed text-shadow */
+      .repo-logo {
+        width: 36px;
+        height: 36px;
+        margin-right: 12px;
       }
 
-      .btn {
-        display: inline-block;
-        vertical-align: middle;
-        padding: 10px 20px;
-        border-radius: 8px;
-        background: #4da6ff;
-        background: -webkit-gradient(linear, left top, left bottom, from(#4da6ff), to(#007aff));
-        background: linear-gradient(to bottom, #4da6ff, #007aff);
-        color: white;
-        font-weight: bold;
+      header h1 {
+        font-size: 22px;
+        line-height: 36px;
+      }
+
+      .nav-links {
+        float: none;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .nav-links a {
+        margin: 0 10px;
         font-size: 14px;
-        text-decoration: none;
-        border: 1px solid #0066cc;
-        /* removed box-shadow and transition */
-        letter-spacing: 0.5px;
-        cursor: pointer;
-      }
-      .btn:hover {
-        background: #7bbdff;
-        background: -webkit-gradient(linear, left top, left bottom, from(#7bbdff), to(#3aa0ff));
-        background: linear-gradient(to bottom, #7bbdff, #3aa0ff);
-        /* removed transform and box-shadow */
-      }
-      .btn:active {
-        /* removed box-shadow and transform */
-      }
-      .card-btn {
-        padding: 8px 18px;
-        font-size: 14px;
-        margin: 15px auto 5px auto;
-        border-radius: 6px;
-        /* removed box-shadow */
-      }
-      .card-btn:hover {
-        /* removed transform and box-shadow */
-      }
-      .card-btn:active {
-        /* removed box-shadow and transform */
       }
 
-      h2,
-      h4 {
-        color: #9fcfff;
-        text-align: center;
-        margin: 30px 0 15px;
-        font-weight: 600;
-        letter-spacing: 0.8px;
-        /* removed text-shadow */
-      }
-      h2 {
-        font-size: 28px;
-        padding-top: 10px;
-      }
-      h4 {
-        font-size: 18px;
-      }
-      p {
-        font-size: 15px;
-        text-align: center;
-        margin: 8px 15px;
-        line-height: 1.5;
-        color: #c0c0c0;
-      }
-
-      .grid-container {
-        /* replaced grid with block and inline-block cards */
-        text-align: center;
-        margin: 25px 0;
-      }
       .card {
-        background: #1e1e1e;
-        border-radius: 15px;
-        padding: 25px;
-        /* removed box-shadow and transition */
-        text-align: center;
-        display: inline-block;
-        vertical-align: top;
-        width: 220px;
-        margin: 0 10px 25px 10px;
-        border: 1px solid #282828;
+        width: 85%;
+        margin: 0 auto 25px auto;
+        display: block;
+        padding: 30px 25px;
       }
-      .card:hover {
-        /* removed transform and box-shadow */
-      }
+
       img.app-image {
         width: 90px;
         height: 90px;
-        object-fit: cover;
-        border-radius: 18px;
-        margin: 10px 0 18px;
-        border: 3px solid #3d3d3d;
-        /* removed box-shadow and transition */
+        border-radius: 20px;
       }
-      .card:hover img.app-image {
-        /* removed transform and box-shadow */
+
+      .repo-cta-container {
+        padding: 25px 20px;
+        margin: 30px 0;
       }
-      .card p {
-        min-height: 60px;
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .repo-cta-container {
+        padding: 20px 15px;
+      }
+
+      .repo-link {
+        font-size: 16px;
         display: block;
-        margin-bottom: 20px;
+        word-break: break-all;
       }
-      footer {
-        text-align: center;
-        font-size: 13px;
-        color: #777;
-        margin-top: 50px;
-        padding-bottom: 25px;
-        border-top: 1px solid #282828;
-        padding-top: 25px;
-      }
-      footer a {
-        color: #9fcfff;
-        text-decoration: none;
-        margin: 0 10px;
-        /* removed transition */
-      }
-      footer a:hover {
-        color: #c0dfff;
-        /* removed text-shadow */
-      }
+    }
 
-      hr {
-        border: none;
-        border-top: 1px solid #383838;
-        margin: 50px 0;
-        /* removed box-shadow */
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1 onclick="location.href='index.html'">daxpkgs</h1>
-      <nav class="nav-links">
-        <a href="#apps">Apps</a>
-        <a href="#games">Games</a>
-        <a href="#utilities">Utilities</a>
-        <a href="#projects">Projects</a>
-      </nav>
-    </header>
+    /* Status indicators for apps */
+    .status-indicator {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      z-index: 2;
+    }
 
-    <div class="repo-cta-container">
-      <a href="https://daxpkgs.github.io/" class="repo-link">
-        http://daxpkgs.github.io/
-      </a>
-      <a
-        href="cydia://url/https://cydia.saurik.com/api/share#?source=http://daxpkgs.github.io/"
-        class="btn"
-        >Add to Cydia</a
-      >
+    .status-active {
+      background: #28a745;
+    }
+
+    .status-beta {
+      background: #fd7e14;
+    }
+
+    .status-coming-soon {
+      background: #6c757d;
+    }
+
+    /* Compatibility badges */
+    .compatibility-badge {
+      display: inline-block;
+      background: rgba(100, 181, 255, 0.1);
+      color: #64b5ff;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 5px 2px;
+      border: 1px solid rgba(100, 181, 255, 0.2);
+    }
+
+    /* Section icons */
+    .section-icon {
+      font-size: 24px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-title" onclick="location.href='index.html'">
+      <img src="imgs/icon.png" alt="daxpkgs logo" class="repo-logo" />
+      <h1>daxpkgs</h1>
     </div>
+    <nav class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#games">Games</a>
+      <a href="#utilities">Utilities</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-    <hr />
-
-    <h2 id="apps">Apps</h2>
-    <div class="grid-container">
-      <div class="card">
-        <img
-          src="imgs/youtubemusic.png"
-          alt="YouTube Music Icon"
-          class="app-image"
-        />
-        <h4>YouTube Music for Legacy iOS</h4>
-        <p>
-          Stream your favorite music with background playback, styled with
-          YouTube Red.
-        </p>
-        <a href="depictions/youtubemusic.html" class="btn card-btn"
-          >More Info</a
-        >
-      </div>
+  <div class="repo-cta-container">
+    <div class="repo-link">
+      https://daxpkgs.github.io/
     </div>
+    <a href="cydia://url/https://cydia.saurik.com/api/share#?source=http://daxpkgs.github.io/" class="btn">
+      📱 Add to Cydia
+    </a>
+  </div>
 
-    <hr />
+  <hr />
 
-    <h2 id="games">Games</h2>
-    <div class="grid-container">
-      <!--
-      <div class="card">
-        <img
-          src="imgs/clashclassic.png"
-          alt="Clash of Clans Icon"
-          class="app-image"
-        />
-        <h4>Clash Classic</h4>
-        <p>
-          Classic Clash of Clans for offline sandbox or private server testing.
-        </p>
-        <a href="depictions/clashclassic.html" class="btn card-btn"
-          >More Info</a
-        >
-      </div>
-      <div class="card">
-        <img
-          src="imgs/retroroyale.png"
-          alt="Clash Royale Icon"
-          class="app-image"
-        />
-        <h4>Retro Royale</h4>
-        <p>
-          Classic Clash Royale 1.8.2 remake for testing and offline sandbox.
-        </p>
-        <a href="depictions/retroroyale.html" class="btn card-btn">More Info</a>
-      </div>
-      -->
-      <div class="card">
-        <img src="imgs/chess.png" alt="Chess App" class="app-image" />
-        <h4>Chess</h4>
-        <p>
-          Classic offline chess with local multiplayer, designed for iOS 6 and
-          up.
-        </p>
-        <a href="depictions/chess.html" class="btn card-btn">More Info</a>
-      </div>
-      <div class="card">
-        <img src="imgs/stockfish.png" alt="Stockfish" class="app-image" />
-        <h4>Stockfish Chess</h4>
-        <p>Analyze games and play against Stockfish engine on your device.</p>
-        <a href="depictions/stockfish.html" class="btn card-btn">More Info</a>
-      </div>
+  <h2 id="apps">
+    <span class="section-icon">📱</span>Apps
+  </h2>
+  <div class="grid-container">
+    <div class="card">
+      <div class="status-indicator status-active"></div>
+      <img src="imgs/plex.png" alt="Plex Icon" class="app-image" />
+      <h4>Plex</h4>
+      <p>
+        Stream or download your Plex library on iOS 6 devices with a clean,
+        fast interface optimized for legacy hardware.
+      </p>
+      <div class="compatibility-badge">iOS 6+</div>
+      <div class="compatibility-badge">iPhone/iPad</div>
+      <a href="depictions/plex.html" class="btn card-btn">More Info</a>
     </div>
-
-    <hr />
-
-    <h2 id="utilities">Utilities</h2>
-    <div class="grid-container">
-      <div class="card">
-        <img src="imgs/chessclock.png" alt="Chess Clock" class="app-image" />
-        <h4>Chess Clock</h4>
-        <p>
-          Simple, clean chess clock with multiple time controls for local
-          matches.
-        </p>
-        <a href="depictions/chessclock.html" class="btn card-btn">More Info</a>
-      </div>
+    <div class="card">
+      <div class="status-indicator status-active"></div>
+      <img src="imgs/youtubemusic.png" alt="YouTube Music Icon" class="app-image" />
+      <h4>YouTube Music</h4>
+      <p>
+        Stream your favorite music with background playback, styled with
+        the classic YouTube Red interface.
+      </p>
+      <div class="compatibility-badge">iOS 5+</div>
+      <div class="compatibility-badge">Background Audio</div>
+      <a href="depictions/youtubemusic.html" class="btn card-btn">More Info</a>
     </div>
+  </div>
 
-    <hr />
+  <hr />
 
-    <h2 id="projects">Projects</h2>
-    <div class="grid-container">
-      <div class="card">
-        <img src="imgs/plex.png" alt="Plex Icon" class="app-image" />
-        <h4>Plex for Legacy iOS</h4>
-        <p>
-          Stream or download your Plex library on iOS 6 devices with a clean,
-          fast interface.
-        </p>
-        <a href="depictions/plex.html" class="btn card-btn">More Info</a>
-      </div>
+  <h2 id="games">
+    <span class="section-icon">🎮</span>Games
+  </h2>
+  <div class="grid-container">
+    <div class="card">
+      <div class="status-indicator status-active"></div>
+      <img src="imgs/chess.png" alt="Chess App" class="app-image" />
+      <h4>Chess</h4>
+      <p>
+        Classic offline chess with local multiplayer support, designed specifically
+        for iOS 6 and optimized for older devices.
+      </p>
+      <div class="compatibility-badge">iOS 6+</div>
+      <div class="compatibility-badge">Offline</div>
+      <a href="depictions/chess.html" class="btn card-btn">More Info</a>
     </div>
+    <div class="card">
+      <div class="status-indicator status-active"></div>
+      <img src="imgs/stockfish.png" alt="Stockfish" class="app-image" />
+      <h4>Stockfish Chess</h4>
+      <p>
+        Analyze games and play against the powerful Stockfish engine,
+        adapted for legacy iOS performance.
+      </p>
+      <div class="compatibility-badge">iOS 5+</div>
+      <div class="compatibility-badge">AI Engine</div>
+      <a href="depictions/stockfish.html" class="btn card-btn">More Info</a>
+    </div>
+  </div>
 
-    <footer>
-      © 2025 dax ·
-      <!--
-      <a href="https://twitter.com/yourhandle">Twitter</a> ·
-      <a href="https://paypal.me/yourname">PayPal</a> ·
-      -->
-      <a href="https://discord.gg/VPhmX6586A">Discord</a>
-    </footer>
-  </body>
+  <hr />
+
+  <h2 id="utilities">
+    <span class="section-icon">🛠️</span>Utilities
+  </h2>
+  <div class="grid-container">
+    <div class="card">
+      <div class="status-indicator status-active"></div>
+      <img src="imgs/chessclock.png" alt="Chess Clock" class="app-image" />
+      <h4>Chess Clock</h4>
+      <p>
+        Simple, clean chess clock with multiple time controls for local
+        matches. Perfect for tournament play.
+      </p>
+      <div class="compatibility-badge">iOS 4+</div>
+      <div class="compatibility-badge">Timer</div>
+      <a href="depictions/chessclock.html" class="btn card-btn">More Info</a>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2 id="projects">
+    <span class="section-icon">🚀</span>Projects
+  </h2>
+  <div class="grid-container">
+    <div class="card">
+      <div class="status-indicator status-beta"></div>
+      <img src="imgs/plex.png" alt="Plex Icon" class="app-image" />
+      <h4>Plex for Legacy iOS</h4>
+      <p>
+        Enhanced Plex client specifically engineered for iOS 6 devices,
+        bringing modern streaming to vintage hardware.
+      </p>
+      <div class="compatibility-badge">iOS 6+</div>
+      <div class="compatibility-badge">Open Source</div>
+      <a href="depictions/plex.html" class="btn card-btn">More Info</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 dax ·
+    <a href="https://twitter.com/daxpkgs">🐦 Twitter</a> ·
+    <a href="https://paypal.me/daxpkgs">💰 PayPal</a> ·
+    <a href="https://discord.gg/s8PZahRbvt">💬 Discord</a>
+  </footer>
+</body>
+
 </html>
